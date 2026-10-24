@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "coordinator": {
+    "id": "user",
+    "surface": "program",
+    "role": "coordinator",
+    "enabled": true
+  },
+  "agents": [
+    {
+      "id": "local-demo",
+      "family": "demo",
+      "surface": "cli",
+      "enabled": true,
+      "adapter": "subprocess",
+      "command": [
+        "python",
+        "{skill_root}/examples/echo_agent.py"
+      ],
+      "args": [
+        "{prompt}"
+      ],
+      "response_parser": "plain-text",
+      "timeout_seconds": 20,
+      "priority": 1,
+      "capabilities": [
+        "demo"
+      ]
+    }
+  ]
+}
